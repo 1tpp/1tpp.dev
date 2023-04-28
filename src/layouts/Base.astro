@@ -9,7 +9,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" href="/pwa-192x192.png" />
+    <link rel="mask-icon" href="/favicon.svg" color="#222222" />
+    <meta name="msapplication-TileColor" content="#222222" />
+    <meta name="theme-color" content="#222222" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>1tpp - {title}</title>
     <meta name="description" content={description} />
@@ -20,7 +24,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${Astro.url.origin}/og.jpg`} />
-    <meta name="theme-color" content="#222222" />
     <link rel="canonical" href={canonicalURL} />
     <link
       rel="alternate"
@@ -40,7 +43,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </script>
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     <script src="/src/pwa.ts"></script>
-    
+
     <style is:global>
       .turbo-progress-bar {
         @apply bg-rose-500;
