@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/Base.astro";
+
+const title = "404 Page Not Found";
+const description =
+  "The page you are looking for does not exist. Please check the URL or go back to the homepage.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div
+    class="max-w-3xl mx-auto flex flex-col items-center justify-center h-screen space-y-4"
+  >
+    <h1 class="text-6xl font-bold text-center text-neutral-100">
+      1tpp.<span class="text-rose-500">dev</span>
+    </h1>
+    <p
+      class="text-2xl font-bold text-center text-neutral-700 uppercase animate-pulse"
+    >
+      Coming Soon
+    </p>
+
+    <div class="flex flex-wrap justify-center py-5 space-x-2 text-gray-300">
+      <a
+        href="/"
+        class="button button--aylen px-5 py-3 bg-neutral-800 hover:bg-neutral-700 hover:text-white relative block focus:outline-none rounded-sm text-sm text-center font-semibold uppercase tracking-widest overflow-hidden"
+      >
+        Go Back
+      </a>
+    </div>
+  </div>
+</BaseLayout>

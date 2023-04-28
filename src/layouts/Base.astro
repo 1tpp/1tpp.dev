@@ -1,4 +1,6 @@
 ---
+import { pwaInfo } from "virtual:pwa-info";
+
 const { title, description } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -36,7 +38,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <script>
       import "../scripts/router.js";
     </script>
-
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+    <script src="/src/pwa.ts"></script>
+    
     <style is:global>
       .turbo-progress-bar {
         @apply bg-rose-500;
