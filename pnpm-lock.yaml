@@ -10,6 +10,9 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^3.2.5
     version: 3.2.5(astro@2.3.2)(react@18.2.0)
+  '@hotwired/turbo':
+    specifier: ^7.3.0
+    version: 7.3.0
   astro:
     specifier: ^2.3.2
     version: 2.3.2
@@ -595,6 +598,11 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@hotwired/turbo@7.3.0:
+    resolution: {integrity: sha512-Dcu+NaSvHLT7EjrDrkEmH4qET2ZJZ5IcCWmNXxNQTBwlnE5tBZfN6WxZ842n5cHV52DH/AKNirbPBtcEXDLW4g==}
+    engines: {node: '>= 14'}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
