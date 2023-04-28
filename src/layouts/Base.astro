@@ -36,6 +36,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <script>
       import "../scripts/router.js";
     </script>
+
+    <style is:global>
+      .turbo-progress-bar {
+        @apply bg-rose-500;
+      }
+    </style>
   </head>
   <body class="bg-neutral-950 text-neutral-100">
     <slot />
