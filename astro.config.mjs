@@ -24,9 +24,9 @@ export default defineConfig({
       includeAssets: ["favicon.svg"],
       registerType: "autoUpdate",
       manifest: {
-        name: "Astro PWA",
-        short_name: "Astro PWA",
-        theme_color: "#ffffff",
+        name: "1tpp.dev",
+        short_name: "1tpp",
+        theme_color: "#222222",
         icons: [
           {
             src: "pwa-192x192.png",
