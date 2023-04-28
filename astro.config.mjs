@@ -9,8 +9,8 @@ import AstroPWA from "@vite-pwa/astro";
 // https://astro.build/config
 export default defineConfig({
   site: "https://1tpp.dev",
-  // output: "server",
-  // adapter: vercel(),
+  output: "server",
+  adapter: vercel(),
   integrations: [
     tailwind(),
     sitemap({
