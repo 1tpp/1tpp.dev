@@ -27,6 +27,9 @@ export default defineConfig({
         name: "1tpp.dev",
         short_name: "1tpp",
         theme_color: "#222222",
+        start_url: "/",
+        display: "standalone",
+        prefer_related_applications: false,
         icons: [
           {
             src: "pwa-192x192.png",
