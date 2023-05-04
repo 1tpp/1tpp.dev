@@ -25,6 +25,9 @@ dependencies:
   tailwindcss:
     specifier: ^3.0.24
     version: 3.3.2
+  vite-plugin-pwa:
+    specifier: ^0.14.7
+    version: 0.14.7(vite@4.3.3)(workbox-build@6.5.4)(workbox-window@6.5.4)
   workbox-window:
     specifier: ^6.5.4
     version: 6.5.4

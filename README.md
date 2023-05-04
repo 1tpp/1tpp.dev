@@ -6,15 +6,15 @@ This project built with [Astro.js ðŸš€](https://astro.build/) and [TailwindCSS ð
 
 Here is a list of core dependencies that are used in this project:
 
-| Package                                                                               | Purpose                                                                                               |
-| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| [`astro` ](<[https://](https://www.npmjs.com/package/astro)>)                         | The core Astro                                                                                        |
-| [`@astrojs/vercel` ](<[https://](https://www.npmjs.com/package/@astrojs/vercel)>)     | allows Astro to deploy your SSR site to Vercel.                                                       |
-| [`@astrojs/sitemap` ](<[https://](https://www.npmjs.com/package/@astrojs/sitemap)>)   | Generates an accessible sitemap for Astro websites.                                                   |
-| [`@astrojs/tailwind` ](<[https://](https://www.npmjs.com/package/@astrojs/tailwind)>) | Automatically sets up TailwindCSS.                                                                    |
-| [`astro-compress` ](<[https://](https://www.npmjs.com/package/astro-compress)>)       | Compresses all static assets into minified files.                                                     |
-| [`@vite-pwa/astro` ](<[https://](https://www.npmjs.com/package/@vite-pwa/astro)>)     | Configures a service-worker for offline-accessability and generates a webmanifest for PWA compliance. |
-| [`@hotwired/turbo` ](<[https://](https://www.npmjs.com/package/@hotwired/turbo)>)     | Drive accelerates links and form submissions by negating the need for full page reloads.              |
+| Package                                                                 | Purpose                                                                                               |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [`astro` ](https://www.npmjs.com/package/astro)                         | The core Astro                                                                                        |
+| [`@astrojs/vercel` ](https://www.npmjs.com/package/@astrojs/vercel)     | allows Astro to deploy your SSR site to Vercel.                                                       |
+| [`@astrojs/sitemap` ](https://www.npmjs.com/package/@astrojs/sitemap)   | Generates an accessible sitemap for Astro websites.                                                   |
+| [`@astrojs/tailwind` ](https://www.npmjs.com/package/@astrojs/tailwind) | Automatically sets up TailwindCSS.                                                                    |
+| [`astro-compress` ](https://www.npmjs.com/package/astro-compress)       | Compresses all static assets into minified files.                                                     |
+| [`@vite-pwa/astro` ](https://www.npmjs.com/package/@vite-pwa/astro)     | Configures a service-worker for offline-accessability and generates a webmanifest for PWA compliance. |
+| [`@hotwired/turbo` ](https://www.npmjs.com/package/@hotwired/turbo)     | Drive accelerates links and form submissions by negating the need for full page reloads.              |
 
 ## Lighthouse score!
 
