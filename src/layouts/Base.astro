@@ -1,33 +1,86 @@
 ---
+import Analytics from "../components/Analytics.astro";
 import { pwaInfo } from "virtual:pwa-info";
 
-const { title, description } = Astro.props;
+export interface Props {
+  title: string;
+  description?: string;
+  keywords?: string[]
+}
+
+const { title, description, keywords = [] } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/pwa-192x192.png" />
-    <link rel="mask-icon" href="/favicon.svg" color="#222222" />
-    <meta name="msapplication-TileColor" content="#222222" />
-    <meta name="theme-color" content="#222222" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- General Meta Tags -->
     <title>1tpp - {title}</title>
+    <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@1tppdotdev" />
-    <meta name="twitter:creator" content="@1tppdotdev" />
+    <meta name='author' content='Panapat Pilapa' />
+    <meta name='distribution' content='global'/>
+    <meta name='audience' content='all' />
+    <meta name='coverage' content='Worldwide' />
+    <meta name='topic' content={keywords.join(', ')} />
+    <meta name='summary' content={description} />
+    <meta name='keywords' content={keywords.join(', ')} />
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:url" content={Astro.url.origin} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='600' />
+    <meta property="og:image:alt" content='1tpp' />
     <meta property="og:image" content={`${Astro.url.origin}/og.jpg`} />
+    <meta property='og:site_name' content='1tpp' />
+    <meta property='og:type' content='website' />
+
+    <!-- Google Tags -->
+    <meta itemprop="name" content={title}>
+    <meta itemprop="url" content={`${Astro.url.origin}`}>
+    <meta itemprop="description" content={description}>
+    <meta itemprop="image" content={`${Astro.url.origin}/og.jpg`}>
+    <meta http-equiv='Content-Language' content='en' />
+
+    <!-- Twitter Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta name="twitter:site" content="@1tppdotdev" />
+    <meta name="twitter:creator" content="@1tppdotdev" />
+    <meta name='twitter:domain' content={`${Astro.url.origin}`} /> 
+
+    <!-- PWA Tags -->
+    <meta name='mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
+    <meta name='apple-mobile-web-app-title' content='1tpp' />
+    <meta name='application-name' content='1tpp' />
+    <link rel="apple-touch-icon" href="/pwa-192x192.png" />
+
+    <meta name="msapplication-TileColor" content="#222222" />
+    <meta name="theme-color" content="#222222" />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel='manifest' href='/manifest/manifest.json' />
+    <!-- 
+      <link rel='icon' href='/manifest/favicon.ico' type='image/svg+xml' />
+      <link rel='icon' type='image/png' sizes='32x32' href='/manifest/icon32.png' />
+      <link rel='icon' type='image/svg+xml' sizes='16x16' href='/manifest/icon16.png' />
+      <link rel='shortcut icon' href='/manifest/favicon.ico' type='image/svg+xml' /> 
+    -->
+    <link rel="mask-icon" href="/favicon.svg" color="#222222" />
     <link rel="canonical" href={canonicalURL} />
     <link
-      rel="alternate"
-      href="/rss.xml"
+    rel="alternate"
+    href="/rss.xml"
       type="application/rss+xml"
       title="RSS"
     />
@@ -91,7 +144,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         transition-delay: 0.175s;
       }
     </style>
+    <Analytics/>
   </head>
+
   <body class="bg-neutral-950 text-neutral-100">
     <slot />
   </body>
