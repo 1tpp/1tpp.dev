@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import vercel from "@astrojs/vercel/serverless";
 import tailwind from "@astrojs/tailwind";
-
 import sitemap from "@astrojs/sitemap";
 import compress from "astro-compress";
 import AstroPWA from "@vite-pwa/astro";
