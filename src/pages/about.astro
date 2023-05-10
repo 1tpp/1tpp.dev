@@ -3,9 +3,89 @@ import BaseLayout from "../layouts/Base.astro";
 
 const title = "About Me";
 const description =
-  "I'm a full-stack developer with a passion for building beautiful, functional, and accessible web applications.";
+  "I'm a software engineer based in Bangkok, Thailand. I love to build web applications and learn new things.";
 ---
 
-<BaseLayout title={title} description={description}>
- Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, incidunt. Consequatur ipsa iste ipsum, possimus obcaecati ratione unde saepe, culpa tempore quam laboriosam perspiciatis id natus dolores vitae alias quod.
+<BaseLayout title={title} description={description} keywords={["about", "1tpp", "panapat pilapa"]}>
+  <div class="grid-line fixed top-0 left-0 w-full h-full z-0">
+    <div
+      class="mx-auto max-w-3xl flex flex-col justify-center items-center h-screen"
+    >
+      <section
+        class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-2xl space-y-4 leading-relaxed border-b border-2 mb-8 bg-white shadow-lg bg-opacity-5 backdrop-blur-lg rounded-xl drop-shadow-lg"
+      >
+        <h1 class="text-3xl font-bold mb-4">About Me</h1>
+        <div>
+          <p>
+            Hi, I'm Panapat Pilapa, but you can call me "It"!, a software
+            engineer based in Bangkok, Thailand.
+          </p>
+          <p>Nice to meet you! 👋🏻</p>
+        </div>
+        <p>
+          I'm currently studying at <a
+            class="text-rose-500 hover:text-rose-600"
+            href="https://www.kmitl.ac.th"
+            >King Mongkut's Institute of Technology Ladkrabang</a
+          > (KMITL) in Computer Engineering.
+        </p>
+
+        <p>
+          I'm always looking for opportunities to contribute to open source
+          projects.
+        </p>
+
+        <div>
+          <h3>Technologies I'm familiar with</h3>
+
+          <ul class="grid grid-cols-2 gap-4 mt-2 text-sm font-medium">
+            <li class="py-2 rounded-sm bg-neutral-800 text-center group">
+              <a
+                class="text-rose-500 group-hover:text-rose-600"
+                href="https://www.typescriptlang.org/">TypeScript</a
+              >
+            </li>
+            <li class="py-2 rounded-sm bg-neutral-800 text-center group">
+              <a
+                class="text-rose-500 group-hover:text-rose-600"
+                href="https://go.dev/">Go</a
+              >
+            </li>
+            <li class="py-2 rounded-sm bg-neutral-800 text-center group">
+              <a
+                class="text-rose-500 group-hover:text-rose-600"
+                href="https://www.python.org/">Python</a
+              >
+            </li>
+            <li class="py-2 rounded-sm bg-neutral-800 text-center group">
+              <a
+                class="text-rose-500 group-hover:text-rose-600"
+                href="https://www.rust-lang.org/">Rust</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="flex flex-wrap justify-center space-x-2 text-gray-300">
+        <a
+          href="/"
+          class="button button--aylen px-5 py-3 bg-neutral-800 hover:bg-neutral-700 hover:text-white relative block focus:outline-none rounded-sm text-sm text-center font-semibold uppercase tracking-widest overflow-hidden"
+        >
+          Go Back
+        </a>
+      </div>
+    </div>
+  </div>
 </BaseLayout>
+
+<style>
+  .grid-line {
+    background: conic-gradient(
+        from 90deg at 1px 1px,
+        #0000 90deg,
+        rgba(255, 255, 255, 0.07) 0
+      )
+      0 0/50px 50px;
+    background-attachment: fixed;
+  }
+</style>
