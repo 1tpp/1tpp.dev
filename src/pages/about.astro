@@ -4,88 +4,143 @@ import BaseLayout from "../layouts/Base.astro";
 const title = "About Me";
 const description =
   "I'm a software engineer based in Bangkok, Thailand. I love to build web applications and learn new things.";
+
+interface Channel {
+  channel: string;
+  url: string;
+  icon: string;
+  tag?: string;
+}
+
+const channels: Channel[] = [
+  {
+    channel: "GitHub",
+    url: "https://github.com/1tpp",
+    icon: "github",
+  },
+  {
+    channel: "LinkedIn",
+    url: "https://www.linkedin.com/in/1tpp",
+    icon: "linkedin",
+  },
+  {
+    channel: "Twitter",
+    url: "https://twitter.com/1tppdotdev",
+    icon: "twitter",
+  },
+];
 ---
 
-<BaseLayout title={title} description={description} keywords={["about", "1tpp", "panapat pilapa"]}>
-  <div class="grid-line fixed top-0 left-0 w-full h-full z-0">
-    <div
-      class="mx-auto max-w-3xl flex flex-col justify-center items-center h-screen"
-    >
-      <section
-        class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-2xl space-y-4 leading-relaxed border-b border-2 mb-8 bg-white shadow-lg bg-opacity-5 backdrop-blur-lg rounded-xl drop-shadow-lg"
+<BaseLayout
+  title={title}
+  description={description}
+  keywords={["about", "1tpp", "panapat pilapa"]}
+>
+  <div class="grid-line fixed w-full h-full">
+    <main class="px-11 py-8">
+      <h1
+        class="text-2xl text-right md:text-left md:text-9xl font-semibold uppercase text-rose-500 mb-8 border-b-2 border-rose-500 pb-4"
       >
-        <h1 class="text-3xl font-bold mb-4">About Me</h1>
-        <div>
-          <p>
-            Hi, I'm Panapat Pilapa, but you can call me "It"!, a software
-            engineer based in Bangkok, Thailand.
+        About Me
+      </h1>
+      <section
+        class="flex md:flex-row flex-col mb-8 md:items-center rounded-lg shadow-lg bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg p-8 border-2 border-rose-500"
+      >
+        <img
+          src="/1tpp.png"
+          alt="Panapat Pilapa"
+          class="md:w-48 md:h-48 h-24 w-24 rounded-full shadow-lg mr-8 mb-4 md:mb-0"
+        />
+        <div class="leading-8">
+          <h2 class="text-4xl font-semibold text-rose-500">Panapat Pilapa</h2>
+          <p class="text-2xl text-neutral-100 mb-4">
+            You can call me <span class="font-semibold text-2xl text-rose-500">
+              "It"
+            </span>/<span class="font-semibold text-2xl text-rose-500">
+              "Xiṭ̄h"
+            </span>
           </p>
-          <p>Nice to meet you! 👋🏻</p>
-        </div>
-        <p>
-          I'm currently studying at <a
-            class="text-rose-500 hover:text-rose-600"
-            href="https://www.kmitl.ac.th"
-            >King Mongkut's Institute of Technology Ladkrabang</a
-          > (KMITL) in Computer Engineering.
-        </p>
+          <p class="text-xl text-neutral-200 mb-4">
+            I'm a software engineer based in Bangkok, Thailand. I love to build
+            web applications and learn new things.
+          </p>
 
-        <p>
-          I'm always looking for opportunities to contribute to open source
-          projects.
-        </p>
-
-        <div>
-          <h3>Technologies I'm familiar with</h3>
-
-          <ul class="grid grid-cols-2 gap-4 mt-2 text-sm font-medium">
-            <li class="py-2 rounded-sm bg-neutral-800 text-center group">
-              <a
-                class="text-rose-500 group-hover:text-rose-600"
-                href="https://www.typescriptlang.org/">TypeScript</a
-              >
-            </li>
-            <li class="py-2 rounded-sm bg-neutral-800 text-center group">
-              <a
-                class="text-rose-500 group-hover:text-rose-600"
-                href="https://go.dev/">Go</a
-              >
-            </li>
-            <li class="py-2 rounded-sm bg-neutral-800 text-center group">
-              <a
-                class="text-rose-500 group-hover:text-rose-600"
-                href="https://www.python.org/">Python</a
-              >
-            </li>
-            <li class="py-2 rounded-sm bg-neutral-800 text-center group">
-              <a
-                class="text-rose-500 group-hover:text-rose-600"
-                href="https://www.rust-lang.org/">Rust</a
-              >
-            </li>
-          </ul>
+          <div class="flex space-x-2">
+            {
+              channels.map((c) => (
+                <a href={c.url} target="_blank" title={c.channel}>
+                  <div class="relative flex flex-col items-center justify-center rounded-md bg-neutral-100 text-neutral-800 w-10 h-10 hover:bg-rose-500 transition-colors duration-300 hover:text-white">
+                    <i class={`fa-2xl fa-brands fa-${c.icon}`} />
+                  </div>
+                </a>
+              ))
+            }
+          </div>
         </div>
       </section>
-      <div class="flex flex-wrap justify-center space-x-2 text-gray-300">
-        <a
-          href="/"
-          class="button button--aylen px-5 py-3 bg-neutral-800 hover:bg-neutral-700 hover:text-white relative block focus:outline-none rounded-sm text-sm text-center font-semibold uppercase tracking-widest overflow-hidden"
-        >
-          Go Back
-        </a>
-      </div>
-    </div>
-  </div>
-</BaseLayout>
 
-<style>
-  .grid-line {
-    background: conic-gradient(
-        from 90deg at 1px 1px,
-        #0000 90deg,
-        rgba(255, 255, 255, 0.07) 0
-      )
-      0 0/50px 50px;
-    background-attachment: fixed;
-  }
-</style>
+      <!-- <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div
+          class="rounded-lg shadow-lg bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg"
+        >
+          <div class="bg-white p-4 rounded-t-lg shadow-lg">
+            <h2 class="text-2xl text-rose-500 font-bold uppercase">No Topic</h2>
+          </div>
+
+          <div class="p-4 shadow-lg">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Reprehenderit soluta incidunt animi odit ut illum laborum
+              veritatis iure saepe consectetur dolore expedita reiciendis magni
+              ullam quaerat temporibus, molestias vel asperiores.
+            </p>
+          </div>
+        </div>
+        <div
+          class="rounded-lg shadow-lg bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg"
+        >
+          <div class="bg-white p-4 rounded-t-lg shadow-lg">
+            <h2 class="text-2xl text-rose-500 font-bold uppercase">No Topic</h2>
+          </div>
+
+          <div class="p-4 shadow-lg">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Reprehenderit soluta incidunt animi odit ut illum laborum
+              veritatis iure saepe consectetur dolore expedita reiciendis magni
+              ullam quaerat temporibus, molestias vel asperiores.
+            </p>
+          </div>
+        </div>
+        <div
+          class="rounded-lg shadow-lg bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg"
+        >
+          <div class="bg-white p-4 rounded-t-lg shadow-lg">
+            <h2 class="text-2xl text-rose-500 font-bold uppercase">No Topic</h2>
+          </div>
+
+          <div class="p-4 shadow-lg">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Reprehenderit soluta incidunt animi odit ut illum laborum
+              veritatis iure saepe consectetur dolore expedita reiciendis magni
+              ullam quaerat temporibus, molestias vel asperiores.
+            </p>
+          </div>
+        </div>
+      </section> -->
+    </main>
+  </div>
+
+  <style>
+    .grid-line {
+      background: conic-gradient(
+          from 90deg at 1px 1px,
+          #0000 90deg,
+          rgba(255, 255, 255, 0.07) 0
+        )
+        0 0/48px 48px;
+      background-attachment: fixed;
+    }
+  </style>
+</BaseLayout>
