@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/Base.astro";
-
 const title = "About Me";
 const description =
   "I'm a software engineer based in Bangkok, Thailand. I love to build web applications and learn new things.";
@@ -36,13 +35,25 @@ const channels: Channel[] = [
   description={description}
   keywords={["about", "1tpp", "panapat pilapa"]}
 >
-  <div class="grid-line fixed w-full h-full">
+  <div class="relative">
+    <div class="grid-line fixed w-full h-screen z-0"></div>
     <main class="px-11 py-8">
-      <h1
-        class="text-2xl text-right md:text-left md:text-9xl font-semibold uppercase text-rose-500 mb-8 border-b-2 border-rose-500 pb-4"
+      <div
+        class="flex justify-between items-center border-b-2 border-rose-500 mb-8 pb-4"
       >
-        About Me
-      </h1>
+        <h1
+          class="text-2xl text-right md:text-left md:text-9xl font-bold uppercase text-rose-500"
+        >
+          <span class="text-outline"> About</span>
+          Me
+        </h1>
+        <a
+          href="/"
+          class="button button--aylen px-3 py-1 md:px-5 md:py-3 bg-neutral-800 hover:bg-neutral-700 hover:text-white relative block focus:outline-none rounded-sm text-sm text-center font-semibold uppercase tracking-widest overflow-hidden border-2 border-neutral-600 hover:border-rose-600 transition-colors duration-300"
+        >
+          Back to Home
+        </a>
+      </div>
       <section
         class="flex md:flex-row flex-col mb-8 md:items-center rounded-lg shadow-lg bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg p-8 border-2 border-rose-500"
       >
@@ -78,69 +89,23 @@ const channels: Channel[] = [
           </div>
         </div>
       </section>
-
-      <!-- <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div
-          class="rounded-lg shadow-lg bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg"
-        >
-          <div class="bg-white p-4 rounded-t-lg shadow-lg">
-            <h2 class="text-2xl text-rose-500 font-bold uppercase">No Topic</h2>
-          </div>
-
-          <div class="p-4 shadow-lg">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Reprehenderit soluta incidunt animi odit ut illum laborum
-              veritatis iure saepe consectetur dolore expedita reiciendis magni
-              ullam quaerat temporibus, molestias vel asperiores.
-            </p>
-          </div>
-        </div>
-        <div
-          class="rounded-lg shadow-lg bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg"
-        >
-          <div class="bg-white p-4 rounded-t-lg shadow-lg">
-            <h2 class="text-2xl text-rose-500 font-bold uppercase">No Topic</h2>
-          </div>
-
-          <div class="p-4 shadow-lg">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Reprehenderit soluta incidunt animi odit ut illum laborum
-              veritatis iure saepe consectetur dolore expedita reiciendis magni
-              ullam quaerat temporibus, molestias vel asperiores.
-            </p>
-          </div>
-        </div>
-        <div
-          class="rounded-lg shadow-lg bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg"
-        >
-          <div class="bg-white p-4 rounded-t-lg shadow-lg">
-            <h2 class="text-2xl text-rose-500 font-bold uppercase">No Topic</h2>
-          </div>
-
-          <div class="p-4 shadow-lg">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Reprehenderit soluta incidunt animi odit ut illum laborum
-              veritatis iure saepe consectetur dolore expedita reiciendis magni
-              ullam quaerat temporibus, molestias vel asperiores.
-            </p>
-          </div>
-        </div>
-      </section> -->
     </main>
+    <canva id="webgl" class="absolute z-10"></canva>
   </div>
-
-  <style>
-    .grid-line {
-      background: conic-gradient(
-          from 90deg at 1px 1px,
-          #0000 90deg,
-          rgba(255, 255, 255, 0.07) 0
-        )
-        0 0/48px 48px;
-      background-attachment: fixed;
-    }
-  </style>
 </BaseLayout>
+
+<style>
+  .grid-line {
+    background: conic-gradient(
+        from 90deg at 1px 1px,
+        #0000 90deg,
+        rgba(255, 255, 255, 0.07) 0
+      )
+      0 0/48px 48px;
+    background-attachment: fixed;
+  }
+</style>
+
+<script 
+src="../scripts/3d.js"
+></script>

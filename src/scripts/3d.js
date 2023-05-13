@@ -1,80 +1,113 @@
 import * as THREE from "three";
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
-);
+(function () {
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.getElementById("webgl").appendChild(renderer.domElement);
+  const renderer = new THREE.WebGLRenderer();
 
-// Mouse Effect movement on the screen
-const mouse = {
-  x: undefined,
-  y: undefined,
-};
+  // Add the renderer to the DOM
+  document.getElementById("webgl").appendChild(renderer.domElement);
 
-window.addEventListener("mousemove", function (event) {
-  mouse.x = event.x;
-  mouse.y = event.y;
-});
-
-// Resize the screen
-window.addEventListener("resize", function () {
   renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-});
 
-const particlesGeometry = new THREE.BufferGeometry();
-const particlesCnt = 5000;
+  // Resize
+  window.addEventListener("resize", () => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
 
-const posArray = new Float32Array(particlesCnt * 3);
+    camera.updateProjectionMatrix();
+  });
 
-for (let i = 0; i < particlesCnt * 3; i++) {
-  posArray[i] = (Math.random() - 0.5) * 5;
-}
+  // Background transparent
+  renderer.setClearColor(0x000000, 0);
 
-particlesGeometry.setAttribute(
-  "position",
-  new THREE.BufferAttribute(posArray, 3)
-);
+  // Lights
+  const pointLight = new THREE.PointLight(0xffffff);
+  pointLight.position.set(5, 5, 5);
+  scene.add(pointLight);
 
-// Material
-const particlesMaterial = new THREE.PointsMaterial({
-  size: 0.005,
-});
+  const ambientLight = new THREE.AmbientLight(0xffffff);
+  scene.add(ambientLight);
 
-// Points
-const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-scene.add(particlesMesh);
+  // Camera Front View
+  camera.position.z = 5;
 
-// Lights
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(5, 5, 5);
-scene.add(pointLight);
+  // Particles (Geometry) and Material for follow the mouse
+  const geometry = new THREE.SphereGeometry(1, 20, 20);
 
-const ambientLight = new THREE.AmbientLight(0xffffff);
-scene.add(ambientLight);
+  // Image texture
+  const texture = new THREE.TextureLoader().load("public/1tpp.png");
 
-camera.position.x = 0;
-camera.position.y = 0;
-camera.position.z = 15;
+  // Material
+  const material = new THREE.MeshStandardMaterial({
+    map: texture,
+  });
 
-camera.lookAt(new THREE.Vector3(0, 0, 0));
+  const sphere = new THREE.Mesh(geometry, material);
+  scene.add(sphere);
 
-// Render Loop
-function animate() {
-  requestAnimationFrame(animate);
+  // Stars
+  function addStar() {
+    const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+    const material = new THREE.MeshStandardMaterial({
+      color: 0xffffff,
+    });
 
-  particlesMesh.rotation.x = mouse.y * 0.0004;
-  particlesMesh.rotation.y = mouse.x * 0.0004;
+    const star = new THREE.Mesh(geometry, material);
 
-  renderer.render(scene, camera);
-}
+    const [x, y, z] = Array(3)
+      .fill()
+      .map(() => THREE.MathUtils.randFloatSpread(100));
 
-animate();
+    star.position.set(x, y, z);
+    scene.add(star);
+  }
+
+  Array(200).fill().forEach(addStar);
+
+  // Mouse Effect movement on the screen
+  const mouse = {
+    x: undefined,
+    y: undefined,
+  };
+
+  // Mouse movement
+  window.addEventListener("mousemove", (event) => {
+    mouse.x = event.clientX;
+    mouse.y = event.clientY;
+  });
+
+  // Render Loop
+  function animate() {
+    requestAnimationFrame(animate);
+    // Rotate the sphere
+    sphere.rotation.x += 0.01;
+    sphere.rotation.y += 0.005;
+    sphere.rotation.z += 0.01;
+
+    // Follow the mouse movement at mouse.x and mouse.y position on the screen
+    if (mouse.x && mouse.y) {
+      const x = mouse.x * 0.01 - 0.5;
+      const y = mouse.y * 0.01 - 0.5;
+
+      camera.position.x += (x - camera.position.x) * 0.05;
+      camera.position.y += (y - camera.position.y) * 0.05;
+      camera.position.z += (x - camera.position.z) * 0.05;
+
+      camera.lookAt(scene.position);
+    }
+
+    // solar system stars
+    scene.rotation.y += 0.0025;
+
+    renderer.render(scene, camera);
+  }
+
+  animate();
+})();

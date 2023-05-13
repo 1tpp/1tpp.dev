@@ -1,3 +1,9 @@
+.text-outline {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+}
+
 body {
   font-family: Inter, sans-serif;
 }
