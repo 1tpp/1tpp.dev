@@ -42,7 +42,7 @@ import * as THREE from "three";
   const geometry = new THREE.SphereGeometry(1, 20, 20);
 
   // Image texture
-  const texture = new THREE.TextureLoader().load("public/1tpp.png");
+  const texture = new THREE.TextureLoader().load("/1tpp.png");
 
   // Material
   const material = new THREE.MeshStandardMaterial({
