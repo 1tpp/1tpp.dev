@@ -1,11 +1,23 @@
+body {
+  font-family: Inter, sans-serif;
+}
+
 .text-outline {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px;
 }
 
-body {
-  font-family: Inter, sans-serif;
+.text-outline-2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px;
+}
+
+.text-outline-4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 4px;
 }
 
 .turbo-progress-bar {
