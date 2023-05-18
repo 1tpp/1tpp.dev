@@ -6,7 +6,7 @@
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro check && tsc --noEmit && astro build",
-		"format": "prettier --write **/*.{astro,js,ts,json,md}",
+		"format": "prettier --write **/*.{astro,js,jsx,ts,tsx,json,md}",
 		"preview": "astro preview",
 		"astro": "astro"
 	},
