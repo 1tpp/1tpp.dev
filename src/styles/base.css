@@ -1,67 +1,67 @@
 body {
-  font-family: Inter, sans-serif;
+	font-family: Inter, sans-serif;
 }
 
 .text-outline {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 1px;
 }
 
 .text-outline-2 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 2px;
 }
 
 .text-outline-4 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 4px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 4px;
 }
 
 .turbo-progress-bar {
-  @apply bg-rose-500;
+	@apply bg-rose-500;
 }
 
 .button {
-  min-width: 150px;
-  max-width: 250px;
-  z-index: 1;
-  -webkit-backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
+	min-width: 150px;
+	max-width: 250px;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .button.button--aylen {
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
 }
 .button--aylen::before,
 .button--aylen::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  bottom: 100%;
-  left: 0;
-  z-index: -1;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
-  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	bottom: 100%;
+	left: 0;
+	z-index: -1;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
 .button--aylen::before {
-  background: #fff1f2;
+	background: #fff1f2;
 }
 .button--aylen::after {
-  background: #e11d48;
+	background: #e11d48;
 }
 .button--aylen:hover::before,
 .button--aylen:hover::after {
-  -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
 }
 .button--aylen:hover::after {
-  -webkit-transition-delay: 0.175s;
-  transition-delay: 0.175s;
+	-webkit-transition-delay: 0.175s;
+	transition-delay: 0.175s;
 }

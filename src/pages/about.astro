@@ -1,109 +1,94 @@
 ---
-import BaseLayout from "../layouts/Base.astro";
-const title = "About Me";
+import BaseLayout from '../layouts/Base.astro'
+const title = 'About Me'
 const description =
-  "I'm a software engineer based in Bangkok, Thailand. I love to build web applications and learn new things.";
+	"I'm a software engineer based in Bangkok, Thailand. I love to build web applications and learn new things."
 
 interface Channel {
-  channel: string;
-  url: string;
-  icon: string;
-  tag?: string;
+	channel: string
+	url: string
+	icon: string
+	tag?: string
 }
 
 const channels: Channel[] = [
-  {
-    channel: "GitHub",
-    url: "https://github.com/1tpp",
-    icon: "github",
-  },
-  {
-    channel: "LinkedIn",
-    url: "https://www.linkedin.com/in/1tpp",
-    icon: "linkedin",
-  },
-  {
-    channel: "Twitter",
-    url: "https://twitter.com/1tppdotdev",
-    icon: "twitter",
-  },
-];
+	{
+		channel: 'GitHub',
+		url: 'https://github.com/1tpp',
+		icon: 'github'
+	},
+	{
+		channel: 'LinkedIn',
+		url: 'https://www.linkedin.com/in/1tpp',
+		icon: 'linkedin'
+	},
+	{
+		channel: 'Twitter',
+		url: 'https://twitter.com/1tppdotdev',
+		icon: 'twitter'
+	}
+]
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  keywords={["about", "1tpp", "panapat pilapa"]}
->
-  <div class="relative">
-    <div class="grid-line fixed w-full h-screen z-0"></div>
-    <main class="px-11 py-8">
-      <div
-        class="flex justify-between items-center border-b-2 border-rose-500 mb-8 pb-4"
-      >
-        <h1
-          class="text-2xl text-right md:text-left md:text-9xl font-bold uppercase text-rose-500"
-        >
-          <span class="text-outline-2"> About</span>
-          Me
-        </h1>
-        <a
-          href="/"
-          class="button button--aylen px-3 py-1 md:px-5 md:py-3 bg-neutral-800 hover:bg-neutral-700 hover:text-white relative block focus:outline-none rounded-sm text-sm text-center font-semibold uppercase tracking-widest overflow-hidden border-2 border-neutral-600 hover:border-rose-600 transition-colors duration-300"
-        >
-          Back to Home
-        </a>
-      </div>
-      <section
-        class="flex md:flex-row flex-col mb-8 md:items-center rounded-lg shadow-lg bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg p-8 border-2 border-rose-500"
-      >
-        <img
-          src="/1tpp.png"
-          alt="Panapat Pilapa"
-          class="md:w-48 md:h-48 h-24 w-24 rounded-full shadow-lg mr-8 mb-4 md:mb-0"
-        />
-        <div class="leading-8">
-          <h2 class="text-4xl font-semibold text-rose-500">Panapat Pilapa</h2>
-          <p class="text-2xl text-neutral-100 mb-4">
-            You can call me <span class="font-semibold text-2xl text-rose-500">
-              "It"
-            </span>/<span class="font-semibold text-2xl text-rose-500">
-              "Xiṭ̄h"
-            </span>
-          </p>
-          <p class="text-xl text-neutral-200 mb-4">
-            I'm a software engineer based in Bangkok, Thailand. I love to build
-            web applications and learn new things.
-          </p>
+<BaseLayout title={title} description={description} keywords={['about', '1tpp', 'panapat pilapa']}>
+	<div class="relative">
+		<div class="grid-line fixed z-0 h-screen w-full"></div>
+		<main class="px-11 py-8">
+			<div class="mb-8 flex items-center justify-between border-b-2 border-rose-500 pb-4">
+				<h1 class="text-right text-2xl font-bold uppercase text-rose-500 md:text-left md:text-9xl">
+					<span class="text-outline-2"> About</span>
+					Me
+				</h1>
+				<a
+					href="/"
+					class="button button--aylen relative block overflow-hidden rounded-sm border-2 border-neutral-600 bg-neutral-800 px-3 py-1 text-center text-sm font-semibold uppercase tracking-widest transition-colors duration-300 hover:border-rose-600 hover:bg-neutral-700 hover:text-white focus:outline-none md:px-5 md:py-3"
+				>
+					Back to Home
+				</a>
+			</div>
+			<section
+				class="mb-8 flex flex-col rounded-lg border-2 border-rose-500 bg-white bg-opacity-5 p-8 shadow-lg drop-shadow-lg backdrop-blur-lg md:flex-row md:items-center"
+			>
+				<img
+					src="/1tpp.png"
+					alt="Panapat Pilapa"
+					class="mb-4 mr-8 h-24 w-24 rounded-full shadow-lg md:mb-0 md:h-48 md:w-48"
+				/>
+				<div class="leading-8">
+					<h2 class="text-4xl font-semibold text-rose-500">Panapat Pilapa</h2>
+					<p class="mb-4 text-2xl text-neutral-100">
+						You can call me <span class="text-2xl font-semibold text-rose-500"> "It"</span>/<span
+							class="text-2xl font-semibold text-rose-500"
+						>
+							"Xiṭ̄h"
+						</span>
+					</p>
+					<p class="mb-4 text-xl text-neutral-200">
+						I'm a software engineer based in Bangkok, Thailand. I love to build web applications and
+						learn new things.
+					</p>
 
-          <div class="flex space-x-2">
-            {
-              channels.map((c) => (
-                <a href={c.url} target="_blank" title={c.channel}>
-                  <div class="relative flex flex-col items-center justify-center rounded-md bg-neutral-100 text-neutral-800 w-10 h-10 hover:bg-rose-500 transition-colors duration-300 hover:text-white">
-                    <i class={`fa-2xl fa-brands fa-${c.icon}`} />
-                  </div>
-                </a>
-              ))
-            }
-          </div>
-        </div>
-      </section>
-    </main>
-    <canva id="webgl" class="absolute z-10"></canva>
-  </div>
+					<div class="flex space-x-2">
+						{
+							channels.map((c) => (
+								<a href={c.url} target="_blank" title={c.channel}>
+									<div class="relative flex h-10 w-10 flex-col items-center justify-center rounded-md bg-neutral-100 text-neutral-800 transition-colors duration-300 hover:bg-rose-500 hover:text-white">
+										<i class={`fa-2xl fa-brands fa-${c.icon}`} />
+									</div>
+								</a>
+							))
+						}
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
 </BaseLayout>
 
 <style>
-  .grid-line {
-    background: conic-gradient(
-        from 90deg at 1px 1px,
-        #0000 90deg,
-        rgba(255, 255, 255, 0.07) 0
-      )
-      0 0/48px 48px;
-    background-attachment: fixed;
-  }
+	.grid-line {
+		background: conic-gradient(from 90deg at 1px 1px, #0000 90deg, rgba(255, 255, 255, 0.07) 0) 0 0/48px
+			48px;
+		background-attachment: fixed;
+	}
 </style>
-
-<script src="../scripts/3d.js"></script>

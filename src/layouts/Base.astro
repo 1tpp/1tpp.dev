@@ -1,98 +1,95 @@
 ---
-import Analytics from "../components/Analytics.astro";
-import { pwaInfo } from "virtual:pwa-info";
+import Analytics from '../components/Analytics.astro'
+import { pwaInfo } from 'virtual:pwa-info'
 
-import "../styles/base.css";
+import '../styles/base.css'
 
-import Navigation from "../components/Navigation.astro";
+import Navigation from '../components/Navigation.astro'
 
 export interface Props {
-  title: string;
-  description?: string;
-  keywords?: string[];
-  includeNavigation?: boolean;
+	title: string
+	description?: string
+	keywords?: string[]
+	includeNavigation?: boolean
 }
 
 const {
-  title,
-  description,
-  keywords = [
-    "1tpp",
-    "Panapat Pilapa",
-    "Personal Website",
-    "Web Developer",
-    "Software Engineer",
-    "Programmer",
-    "Full Stack Developer",
-    "Penetration Tester",
-  ],
-  includeNavigation = false,
-} = Astro.props;
+	title,
+	description,
+	keywords = [
+		'1tpp',
+		'Panapat Pilapa',
+		'Personal Website',
+		'Web Developer',
+		'Software Engineer',
+		'Programmer',
+		'Full Stack Developer',
+		'Penetration Tester'
+	],
+	includeNavigation = false
+} = Astro.props
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<meta charset="utf-8" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- General Meta Tags -->
-    <title>1tpp - {title}</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
-    <meta name="author" content="Panapat Pilapa" />
-    <meta name="distribution" content="global" />
-    <meta name="audience" content="all" />
-    <meta name="coverage" content="Worldwide" />
-    <meta name="topic" content={keywords.join(", ")} />
-    <meta name="summary" content={description} />
-    <meta name="keywords" content={keywords.join(", ")} />
+		<!-- General Meta Tags -->
+		<title>1tpp - {title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="author" content="Panapat Pilapa" />
+		<meta name="distribution" content="global" />
+		<meta name="audience" content="all" />
+		<meta name="coverage" content="Worldwide" />
+		<meta name="topic" content={keywords.join(', ')} />
+		<meta name="summary" content={description} />
+		<meta name="keywords" content={keywords.join(', ')} />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:url" content={Astro.url.origin} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="600" />
-    <meta property="og:image:alt" content="1tpp" />
-    <meta property="og:image" content={`${Astro.url.origin}/og.jpg`} />
-    <meta property="og:site_name" content="1tpp" />
-    <meta property="og:type" content="website" />
+		<!-- Open Graph / Facebook -->
+		<meta property="og:url" content={Astro.url.origin} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="600" />
+		<meta property="og:image:alt" content="1tpp" />
+		<meta property="og:image" content={`${Astro.url.origin}/og.jpg`} />
+		<meta property="og:site_name" content="1tpp" />
+		<meta property="og:type" content="website" />
 
-    <!-- Google Tags -->
-    <meta itemprop="name" content={title} />
-    <meta itemprop="url" content={`${Astro.url.origin}`} />
-    <meta itemprop="description" content={description} />
-    <meta itemprop="image" content={`${Astro.url.origin}/og.jpg`} />
-    <meta http-equiv="Content-Language" content="en" />
+		<!-- Google Tags -->
+		<meta itemprop="name" content={title} />
+		<meta itemprop="url" content={`${Astro.url.origin}`} />
+		<meta itemprop="description" content={description} />
+		<meta itemprop="image" content={`${Astro.url.origin}/og.jpg`} />
+		<meta http-equiv="Content-Language" content="en" />
 
-    <!-- Twitter Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta name="twitter:site" content="@1tppdotdev" />
-    <meta name="twitter:creator" content="@1tppdotdev" />
-    <meta name="twitter:domain" content={`${Astro.url.origin}`} />
+		<!-- Twitter Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta name="twitter:site" content="@1tppdotdev" />
+		<meta name="twitter:creator" content="@1tppdotdev" />
+		<meta name="twitter:domain" content={`${Astro.url.origin}`} />
 
-    <!-- PWA Tags -->
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="apple-mobile-web-app-title" content="1tpp" />
-    <meta name="application-name" content="1tpp" />
-    <link rel="apple-touch-icon" href="/pwa-192x192.png" />
+		<!-- PWA Tags -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-title" content="1tpp" />
+		<meta name="application-name" content="1tpp" />
+		<link rel="apple-touch-icon" href="/pwa-192x192.png" />
 
-    <meta name="msapplication-TileColor" content="#222222" />
-    <meta name="theme-color" content="#222222" />
+		<meta name="msapplication-TileColor" content="#222222" />
+		<meta name="theme-color" content="#222222" />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- 
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- 
       <link rel='manifest' href='/manifest/manifest.json' />
       <link rel='icon' href='/manifest/favicon.ico' type='image/svg+xml' />
       <link rel='icon' type='image/png' sizes='32x32' href='/manifest/icon32.png' />
@@ -100,41 +97,28 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <link rel='shortcut icon' href='/manifest/favicon.ico' type='image/svg+xml' /> 
     -->
 
-    <link rel="mask-icon" href="/favicon.svg" color="#222222" />
-    <link rel="canonical" href={canonicalURL} />
-    <link
-      rel="alternate"
-      href="/rss.xml"
-      type="application/rss+xml"
-      title="RSS"
-    />
-    <link
-      rel="sitemap"
-      type="application/xml"
-      title="Sitemap"
-      href="/sitemap-index.xml"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
-    />
-    <script
-      src="https://kit.fontawesome.com/0f355ffcd9.js"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      import "../scripts/router.js";
-    </script>
-    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
-    <script src="/src/pwa.ts"></script>
-    <Analytics />
-    <slot name="head" />
-  </head>
+		<link rel="mask-icon" href="/favicon.svg" color="#222222" />
+		<link rel="canonical" href={canonicalURL} />
+		<link rel="alternate" href="/rss.xml" type="application/rss+xml" title="RSS" />
+		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+		/>
+		<script src="https://kit.fontawesome.com/0f355ffcd9.js" crossorigin="anonymous"></script>
+		<script>
+			import '../scripts/router.js'
+		</script>
+		{pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+		<script src="/src/pwa.ts"></script>
+		<Analytics />
+		<slot name="head" />
+	</head>
 
-  <body class="bg-neutral-950 text-neutral-100">
-    <slot />
-    {includeNavigation && <Navigation />}
-  </body>
+	<body class="bg-neutral-950 text-neutral-100">
+		<slot />
+		{includeNavigation && <Navigation />}
+	</body>
 </html>
