@@ -7,12 +7,17 @@ const description =
 ---
 
 <BaseLayout title={title} description={description}>
-	<div class="container absolute z-20 mx-auto">
-		<div class="flex h-screen items-center justify-center">
+	<div
+		class="absolute bottom-0 left-0 right-0 top-0 grid place-content-center gap-3 overflow-hidden opacity-90 md:gap-4 lg:gap-5 xl:gap-7"
+	>
+		<div class="grid gap-2 md:gap-4 lg:gap-2 xl:gap-6">
 			<h1 class="text-center text-6xl font-bold uppercase text-neutral-300">
 				Coming <span class="animate-pulse text-rose-500">Soon</span>
 			</h1>
+			<p class="text-center text-2xl font-bold uppercase text-neutral-300">
+				Stay tuned for updates!
+			</p>
 		</div>
+		<GridLineAnimation />
 	</div>
-	<GridLineAnimation />
 </BaseLayout>
