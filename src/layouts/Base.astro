@@ -4,7 +4,6 @@ import { pwaInfo } from 'virtual:pwa-info'
 
 import '../styles/base.css'
 
-import Navigation from '../components/Navigation.astro'
 
 export interface Props {
 	title: string
@@ -119,6 +118,5 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
 	<body class="bg-neutral-950 text-neutral-100">
 		<slot />
-		{includeNavigation && <Navigation />}
 	</body>
 </html>

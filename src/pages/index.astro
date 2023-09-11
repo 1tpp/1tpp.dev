@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../layouts/Base.astro'
 import GridLineAnimation from '../components/GridLineAnimation.astro'
+
 const title = 'Stories of a Full Stack Developer and Penetration Tester'
 const description =
 	'1tpp.dev is a website dedicated to sharing the stories and experiences of a full stack developer and penetration tester. Our expert author provides readers with valuable insights and practical tips that can help them stay ahead of the game in the rapidly evolving world of technology. Whether you are a seasoned developer or just starting out in the field, 1tpp has something for everyone.'
 ---
 
-<BaseLayout title={title} description={description}>
+<!-- <BaseLayout title={title} description={description}>
 	<div
 		class="absolute bottom-0 left-0 right-0 top-0 grid place-content-center gap-3 overflow-hidden opacity-90 md:gap-4 lg:gap-5 xl:gap-7"
 	>
@@ -17,6 +18,16 @@ const description =
 			<p class="text-center text-2xl font-bold uppercase text-neutral-300">
 				Stay tuned for updates!
 			</p>
+		</div>
+		<GridLineAnimation />
+	</div>
+</BaseLayout> -->
+<BaseLayout title={title} description={description}>
+	<div
+		class="absolute bottom-0 left-0 right-0 top-0 grid place-content-center gap-3 overflow-hidden opacity-90 md:gap-4 lg:gap-5 xl:gap-7"
+	>
+		<div class="grid gap-2 md:gap-4 lg:gap-2 xl:gap-6">
+			<h1 class="text-center text-6xl font-bold uppercase text-neutral-300">1tpp.dev</h1>
 		</div>
 		<GridLineAnimation />
 	</div>
