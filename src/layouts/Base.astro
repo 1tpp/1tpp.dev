@@ -108,6 +108,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 		<script>
 			import '../scripts/router.js'
 		</script>
+		<script type="module">
+			import { trailingCursor } from 'https://unpkg.com/cursor-effects@latest/dist/esm.js'
+
+			new trailingCursor()
+		</script>
 		{pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
 		<script src="/src/pwa.ts"></script>
 		<Analytics />
