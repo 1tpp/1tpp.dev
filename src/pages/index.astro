@@ -1,7 +1,9 @@
 ---
-import BaseLayout from '../layouts/Base.astro'
-import GridLineAnimation from '../components/GridLineAnimation.astro'
 import { Image } from 'astro:assets'
+
+import BaseLayout from '../layouts/Base.astro'
+import Footer from '../components/Footer.astro'
+import GridLineAnimation from '../components/GridLineAnimation.astro'
 
 const title = 'Stories of a Full Stack Developer and Penetration Tester'
 const description =
@@ -38,5 +40,6 @@ const description =
 			</div>
 		</div>
 		<GridLineAnimation />
+		<Footer />
 	</div>
 </BaseLayout>
