@@ -15,19 +15,19 @@
 		"@astrojs/sitemap": "^3.0.3",
 		"@astrojs/tailwind": "^5.0.3",
 		"@astrojs/vercel": "^6.0.2",
-		"@hotwired/turbo": "^7.3.0",
-		"@vite-pwa/astro": "^0.0.5",
+		"@hotwired/turbo": "8.0.0-beta.1",
+		"@vite-pwa/astro": "^0.2.0",
 		"astro": "^4.0.4",
 		"astro-compress": "^2.2.3",
-		"prettier-plugin-astro": "^0.8.1",
+		"prettier-plugin-astro": "^0.12.2",
 		"tailwindcss": "^3.3.6",
-		"vite-plugin-pwa": "^0.14.7",
-		"workbox-window": "^6.6.0"
+		"vite-plugin-pwa": "^0.17.4",
+		"workbox-window": "^7.0.0"
 	},
 	"devDependencies": {
 		"eslint": "^8.55.0",
-		"prettier": "^2.8.8",
-		"prettier-plugin-tailwindcss": "^0.3.0",
+		"prettier": "^3.1.1",
+		"prettier-plugin-tailwindcss": "^0.5.9",
 		"typescript": "^5.3.3"
 	}
 }
