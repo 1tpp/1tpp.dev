@@ -9,7 +9,16 @@ import AstroPWA from '@vite-pwa/astro'
 export default defineConfig({
 	site: 'https://1tpp.dev',
 	output: 'server',
-	adapter: vercel(),
+	adapter: vercel({
+		imageService: true,
+		imagesConfig: {
+			deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+			imageSizes: [
+				16, 32, 48, 64, 96, 128, 256, 384, 512, 640, 750, 828, 1080, 1200, 1920, 2048, 3840
+			],
+			domains: ['1tpp.dev']
+		}
+	}),
 	integrations: [
 		tailwind(),
 		sitemap({
