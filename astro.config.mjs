@@ -22,7 +22,7 @@ export default defineConfig({
 	integrations: [
 		tailwind(),
 		sitemap({
-			customPages: [`https://1tpp.dev/`, `https://1tpp.dev/about`]
+			customPages: [`https://1tpp.dev/`, `https://1tpp.dev/404`]
 		}),
 		compress(),
 		AstroPWA({
