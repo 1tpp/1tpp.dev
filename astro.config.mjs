@@ -10,19 +10,24 @@ export default defineConfig({
 	site: 'https://1tpp.dev',
 	output: 'server',
 	adapter: vercel({
+		webAnalytics: {
+			enabled: true
+		},
+		speedInsights: {
+			enabled: true
+		},
 		imageService: true,
 		imagesConfig: {
 			deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-			imageSizes: [
-				16, 32, 48, 64, 96, 128, 256, 384, 512, 640, 750, 828, 1080, 1200, 1920, 2048, 3840
-			],
+			devImageService: 'squoosh',
+			sizes: [320, 640, 1280],
 			domains: ['1tpp.dev']
 		}
 	}),
 	integrations: [
 		tailwind(),
 		sitemap({
-			customPages: [`https://1tpp.dev/`, `https://1tpp.dev/404`]
+			customPages: [`https://1tpp.dev/`]
 		}),
 		compress(),
 		AstroPWA({
