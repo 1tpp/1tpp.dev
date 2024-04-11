@@ -1878,7 +1878,7 @@ packages:
     resolution: {integrity: sha512-g66YmO/Oa+EThB3KkNDhrM9mFnNyRn6tqgwGiBHh4Vf+d3XjCznuWSG2o2e2cO/RlddVRtCwvBSMuG6sYQWX+g==}
     engines: {node: '>= 14'}
     dependencies:
-      idiomorph: github.com/basecamp/idiomorph/e906820368e4c9c52489a3336b8c3826b1bf6de5
+      idiomorph: git@github.com+basecamp/idiomorph/e906820368e4c9c52489a3336b8c3826b1bf6de5
     dev: false
 
   /@humanwhocodes/config-array@0.11.13:
@@ -1950,7 +1950,7 @@ packages:
       npmlog: 5.0.1
       rimraf: 3.0.2
       semver: 7.5.4
-      tar: 6.2.0
+      tar: 6.2.1
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -6707,8 +6707,8 @@ packages:
       streamx: 2.15.6
     dev: false
 
-  /tar@6.2.0:
-    resolution: {integrity: sha512-/Wo7DcT0u5HUV486xg675HtjNd3BXZ6xDbzsCUZPt5iw8bTQ63bP0Raut3mvro9u+CUyq7YQd8Cx55fsZXxqLQ==}
+  /tar@6.2.1:
+    resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
     dependencies:
       chownr: 2.0.0
@@ -7587,6 +7587,7 @@ packages:
 
   /workbox-google-analytics@7.0.0:
     resolution: {integrity: sha512-MEYM1JTn/qiC3DbpvP2BVhyIH+dV/5BjHk756u9VbwuAhu0QHyKscTnisQuz21lfRpOwiS9z4XdqeVAKol0bzg==}
+    deprecated: It is not compatible with newer versions of GA starting with v4, as long as you are using GAv3 it should be ok, but the package is not longer being maintained
     dependencies:
       workbox-background-sync: 7.0.0
       workbox-core: 7.0.0
@@ -7729,8 +7730,8 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: false
 
-  github.com/basecamp/idiomorph/e906820368e4c9c52489a3336b8c3826b1bf6de5:
-    resolution: {tarball: https://codeload.github.com/basecamp/idiomorph/tar.gz/e906820368e4c9c52489a3336b8c3826b1bf6de5}
+  git@github.com+basecamp/idiomorph/e906820368e4c9c52489a3336b8c3826b1bf6de5:
+    resolution: {commit: e906820368e4c9c52489a3336b8c3826b1bf6de5, repo: git@github.com:basecamp/idiomorph.git, type: git}
     name: idiomorph
     version: 0.0.8
     dev: false
