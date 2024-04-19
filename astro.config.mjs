@@ -2,8 +2,8 @@ import { defineConfig } from 'astro/config'
 import vercel from '@astrojs/vercel/serverless'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
-import compress from 'astro-compress'
 import AstroPWA from '@vite-pwa/astro'
+import playformCompress from '@playform/compress'
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,11 +22,11 @@ export default defineConfig({
 		}
 	}),
 	integrations: [
+		playformCompress(),
 		tailwind(),
 		sitemap({
 			customPages: [`https://1tpp.dev/`]
 		}),
-		compress(),
 		AstroPWA({
 			mode: 'development',
 			base: '/',

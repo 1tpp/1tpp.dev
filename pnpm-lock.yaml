@@ -23,15 +23,15 @@ importers:
       '@hotwired/turbo':
         specifier: 8.0.0-beta.1
         version: 8.0.0-beta.1
+      '@playform/compress':
+        specifier: ^0.0.3
+        version: 0.0.3(@types/node@20.12.4)(typescript@5.4.5)
       '@vite-pwa/astro':
         specifier: ^0.2.0
         version: 0.2.0(astro@4.6.3(@types/node@20.12.4)(lightningcss@1.24.1)(terser@5.30.3)(typescript@5.4.5))(vite-plugin-pwa@0.17.5(vite@5.2.9(@types/node@20.12.4)(lightningcss@1.24.1)(terser@5.30.3))(workbox-build@7.0.0(@types/babel__core@7.20.5))(workbox-window@7.0.0))
       astro:
         specifier: ^4.6.3
         version: 4.6.3(@types/node@20.12.4)(lightningcss@1.24.1)(terser@5.30.3)(typescript@5.4.5)
-      astro-compress:
-        specifier: ^2.2.22
-        version: 2.2.22(@types/node@20.12.4)(typescript@5.4.5)
       prettier-plugin-astro:
         specifier: ^0.12.3
         version: 0.12.3
@@ -1213,6 +1213,9 @@ packages:
     peerDependencies:
       '@playform/document': 0.0.5
 
+  '@playform/compress@0.0.3':
+    resolution: {integrity: sha512-6we2ZgCc6FszEW6iSLr5HsP+q6y/E535AHcfLnihdlXUsT5K5uXDCOuPmb3RjVADeUxDSut7AA9RKnSumVtMAQ==}
+
   '@playform/document@0.0.6':
     resolution: {integrity: sha512-birdfwDtVwbSSi/cyHfQwLaqQG9oVsaJESL8ORu2smJBDqHNPYj/sP5jDyRtIbp3+oaWfsaxM4iXoQtYmzpLGQ==}
     hasBin: true
@@ -1554,10 +1557,6 @@ packages:
   arraybuffer.prototype.slice@1.0.3:
     resolution: {integrity: sha512-bMxMKAjg13EBSVscxTaYA4mRc5t1UAXa2kXiGTNfZ079HIWXEkKmkgFrh/nJqamaLSrXO5H4WFFkPEaLJWbs3A==}
     engines: {node: '>= 0.4'}
-
-  astro-compress@2.2.22:
-    resolution: {integrity: sha512-0oGFjm0T+3eA+gsx75r3WnujWBSb72H3Ihn5wgrLFqAl0h/vopgt6ew8JzL5xogrLqeqs1EbpZwmCK5lLOaZUQ==}
-    deprecated: astro-compress has been deprecated, use @playform/compress
 
   astro@4.5.16:
     resolution: {integrity: sha512-1nOVsMq2OJiXnG6gO0Y77vTAboGN9nLQSy/8SGazq4h6x+alzbsMbQbArBgvaLzOSUXD0m91XLs3D8bOSuavrQ==}
@@ -5562,6 +5561,30 @@ snapshots:
       tsc-alias: 1.8.8
       typescript: 5.4.4
 
+  '@playform/compress@0.0.3(@types/node@20.12.4)(typescript@5.4.5)':
+    dependencies:
+      '@playform/build': 0.0.5(@playform/document@0.0.6(typescript@5.4.5))
+      '@playform/document': 0.0.6(typescript@5.4.5)
+      '@playform/pipe': 0.0.2
+      '@types/csso': 5.0.4
+      '@types/html-minifier-terser': 7.0.2
+      astro: 4.5.16(@types/node@20.12.4)(lightningcss@1.24.1)(terser@5.30.3)(typescript@5.4.5)
+      csso: 5.0.5
+      html-minifier-terser: 7.2.0
+      kleur: 4.1.5
+      lightningcss: 1.24.1
+      sharp: 0.33.3
+      svgo: 3.2.0
+      terser: 5.30.3
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - typescript
+
   '@playform/document@0.0.6(typescript@5.4.5)':
     dependencies:
       commander: 12.0.0
@@ -5932,30 +5955,6 @@ snapshots:
       get-intrinsic: 1.2.4
       is-array-buffer: 3.0.4
       is-shared-array-buffer: 1.0.3
-
-  astro-compress@2.2.22(@types/node@20.12.4)(typescript@5.4.5):
-    dependencies:
-      '@playform/build': 0.0.5(@playform/document@0.0.6(typescript@5.4.5))
-      '@playform/document': 0.0.6(typescript@5.4.5)
-      '@playform/pipe': 0.0.2
-      '@types/csso': 5.0.4
-      '@types/html-minifier-terser': 7.0.2
-      astro: 4.5.16(@types/node@20.12.4)(lightningcss@1.24.1)(terser@5.30.3)(typescript@5.4.5)
-      csso: 5.0.5
-      html-minifier-terser: 7.2.0
-      kleur: 4.1.5
-      lightningcss: 1.24.1
-      sharp: 0.33.3
-      svgo: 3.2.0
-      terser: 5.30.3
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - typescript
 
   astro@4.5.16(@types/node@20.12.4)(lightningcss@1.24.1)(terser@5.30.3)(typescript@5.4.5):
     dependencies:
