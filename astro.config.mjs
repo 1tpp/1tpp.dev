@@ -10,9 +10,6 @@ export default defineConfig({
 	site: 'https://1tpp.dev',
 	output: 'server',
 	adapter: vercel({
-		webAnalytics: {
-			enabled: true
-		},
 		speedInsights: {
 			enabled: true
 		},
