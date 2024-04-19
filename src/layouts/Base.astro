@@ -23,7 +23,7 @@ const {
 		'Programmer',
 		'Full Stack Developer',
 		'Penetration Tester'
-	],
+	]
 } = Astro.props
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
@@ -108,7 +108,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 		<script>
 			import '../scripts/router.js'
 		</script>
-		<script type="module">
+		<script is:inline>
 			import { trailingCursor } from 'https://unpkg.com/cursor-effects@latest/dist/esm.js'
 
 			new trailingCursor()
